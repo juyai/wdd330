@@ -7,6 +7,412 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>NOTAS WEEK 2</h1>
+    <h1>Week 2</h1>
+    <a href="./chapter2.html" target="_blank">Excercise 1</a>
+    <a href="./chapter3.html" target="_blank">Excercise 2</a>
+    
+    <h2>Notes</h2>
+    <section>
+        <h2>Comments</h2>    
+        <h3>Single line comments</h3>
+        <p>// this is a short comment</p>
+        <h3>Multi-line comments</h3>
+        <p>start with <b>/*</b></p>
+        <p>finish with <b>*/</b></p>
+        <p><b>/*</b>this is a long comment. Lorem ipsum dolor<br>
+            sit amet, consectetur adipiscing elit, sed do <br>
+            eiusmod tempor incididunt ut labore et dolore <br>
+            magna aliqua.<b>*/</b>
+        </p>
+    </section>
+    <p>• A JavaScript program is made up of a series of statements.</p>
+    <p>• Write each statement on a new line, terminated by a semi-colon <b>;</b></p>
+    <p>• block = series of statements that are collected together inside curly braces {}</p>
+    <p>• whitespace = to format my code</p>
+    <section>
+        <h2>Reserved words</h2>
+        <p>cannot be used to:</p>
+        <ul>
+            <li>name variables</li>
+            <li>funtions parameters</li>
+            <li>object properties</li>
+        </ul>
+        <table>
+            <tr>
+                <td>abstract
+                <td>await</td>
+                <td>boolean</td>
+                <td>break</td>
+            </tr>  
+            <tr>
+                <td>byte</td>
+                <td>case</td>
+                <td>catch</td>
+                <td>char</td>
+            </tr>
+            <tr>
+                <td>class</td>
+                <td>const</td>
+                <td>continue</td>
+                <td>debugger</td>
+            </tr>  
+            <tr>
+                <td>default</td>
+                <td>delete</td>
+                <td>do</td>
+                <td>double</td>
+            </tr>
+            <tr>
+                <td>else</td>
+                <td>enum</td>
+                <td>export</td>
+                <td>extends</td>
+            </tr>
+            <tr>
+                <td>false</td>
+                <td>final</td>
+                <td>finally</td>
+                <td>float</td>
+            </tr>
+            <tr>
+                <td>for</td>
+                <td>function</td>
+                <td>goto</td>
+                <td>if</td>
+            </tr>
+            <tr>
+                <td>implements</td>
+                <td>import</td>
+                <td>in instanceof</td>
+                <td>int</td>
+            </tr>
+            <tr>
+                <td>interface</td>
+                <td>let</td>
+                <td>long</td>
+                <td>native</td>
+            </tr>
+            <tr>
+                <td>new</td>
+                <td>null</td>
+                <td>package</td>
+                <td>private</td>
+            </tr>
+            <tr>
+                <td>protected</td>
+                <td>public</td>
+                <td>return</td>
+                <td>short</td>
+            </tr>
+            <tr>
+                <td>static</td>
+                <td>super</td>
+                <td>switch</td>
+                <td>synchronized</td>
+            </tr>
+            <tr>
+                <td>this</td>
+                <td>throw</td>
+                <td>throws</td>
+                <td>transient</td>
+            </tr>
+            <tr>
+                <td>true</td>
+                <td>try</td>
+                <td>typeof</td>
+                <td>var</td>
+            </tr>
+            <tr>
+                <td>volatile</td>
+                <td>void</td>
+                <td>while</td>
+                <td>with</td>
+            </tr>
+            <tr>
+                <td>yield</td>
+            </tr>
+        </table>
+        <h3>these words should be treated as reserved words even when they are not</h3>
+        <p><b>undefined, NaN, Infinite</b></p>
+    </section>
+    <section>
+       <h2>Primitive Data Types</h2>
+        <p>7 different data types</p>
+        <p>String, Symbol, Number, Boolean, Undefined, Null</p>
+        <p><b>All non-primitive data types return a type of 'object' (arrays, functions and object literals)</b></p> 
+    </section>
+    <section>
+        <h2>OPERATORS</h2>
+        <p>An operator applies an operation to a <b>value</b>, which is known as the <b>operand</b></p>
+        <h3>unary operator</h3>
+        <p>requires one operand</p>
+        <h3>binary operator</h3>
+        <p>requires two operands</p>
+        <p>3 <b>+</b> 5</p>
+        <p>The operator is + and the numbers 3 and 5 are the operands</p>
+        <h3>ternary operator</h3>
+        <p>requires three operands</p>
+    </section>
+    <section>
+        <h2>VARIABLES</h2>
+        <p>value stored in memory</p>
+        <p>Variables have to be declared before they can be used.</p>
+        <p><b>JavaScript uses the keywords const and let to declare variables</b></p>
+        <h3>const</h3>
+        <p>when the variable will not be reassigned to another value</p>
+        <h3>let</h3>
+        <p>if the variable might be reassigned later in the program</p>
+        <p><i><b>declare</b> and <b>assign  multiple variables at the same time</b>separating them with commas:</i><br>
+            Example: <br>
+            let x = 3, y = 4, z = 5;
+        </p>
+        <p><i>Variables that have been declared using the <b>let</b> keyword <br>
+            can be reassigned to another value at some point later in the <br>
+            program. This is done by simply putting them equal to the new value. <br>
+            For example, we would update the score variable to have a value of 5, like so:</i>
+        </p>
+        <p>let score = 0; <br>
+            score = 5;
+        </p>
+        <p><u>If the variable references a non-primitive data type, such as an array, function or object,<br>   
+            then using <b>const</b> will not make it immutable. This means the underlying data inside the object can <br>
+            change (known as mutating the object). We can see this in the example below:</u> <br>
+            <br>
+            const name = { value: 'Alexa' }; // an object <br>
+            name.value = 'Siri'; // change the value <br>
+            <mark>Even if you use const to declare a variable, non-primitive data types can still be mutated later in the program. <br>
+            Using const prevents you from reassigning a variable to another object, as it will produce an error </mark> 
+        </p>
+    </section>
+    <section>
+        <h2>SCOPE</h2>
+        <p><i>Using const and let to declare variables means they are block scoped, 
+            so their value only exists inside the block they are declared in.</i>
+        </p>
+        <h3>Global Scope</h3>
+        <ul>
+            <li>Any variable declared outside of a block is said to have global scope. This means it is accessible everywhere in the program.</li>
+            <li>try to keep the number of global variables to a minimum</li>
+        </ul>
+        <h3>Local Scope</h3>
+        <ul>
+            <li>using the let or const will only be available inside that block and not be accessible outside of that block.</li>
+        </ul>
+        <h3>Things to consider:</h3>
+        <ul>
+            <li>a variable can have two different values depending on whether it is defined inside or outside a block</li>
+            <li>we can also define a global variable and then overwrite it from within the block:</li>
+            <li>we can define a varable inside the block, but without using let or const, it has global scope and is also available outside the block.</li>
+            <li>if a value is unlikely to change in your code then you should declare it using const, and <mark>let should only be used for storing values that will need to be reassigned while the program is running.</mark> </li>
+        </ul>
+    </section>
+    <section>
+        <h2>Naming Constants & Variables</h2>
+        <ul>
+            <li>
+                give them sensible names that describe what the variable represents; hence, answer is a better variable name than x.
+            </li>
+            <li><b><mark>Constant and variable names can start with any upper or lower-case letter, an underscore, _, or dollar character, $. They can also contain numbers, but cannot start with them.</mark></b></li>
+            <li>Variables that start with an underscore generally refer to private properties and methods, so it's best to not follow this convention for your own variable names.</li>
+            <li>The $ character is also used by the popular jQuery library, so using this in your variable names may also cause problems.</li>
+            <li><b><mark>Constant and variable names are case sensitive, so ANSWER is different to Answer and answer.</mark></b></li>                   
+        </ul>
+        <p>$name <br>
+            _answer <br>
+            firstName <br>
+            last_name <br>
+            address_line1</p>
+        <p><b>When using multiple words for constant and variable names there are two conventions:</b></p>
+        <h3>Camel case</h3>
+        <p>starts with a lowercase letter and then each new word is capitalized</p>
+        <h3>Underscore</h3>
+        <p> separates each new word with an underscore</p>
+        <br>
+        <p>- JavaScript's built-in functions use the camel-case notation and this is probably</p>
+        <p>-important!!! be consistent.</p>
+    </section>
+    <section>
+        <h2>Direct Assignment and Assignment By Reference</h2>
+        <p>
+            const a = 1; <br>
+            let b = a; // a = 1, b = 1 <br>
+
+            b = 2; // a = 1, b = 2
+        </p>
+        <p><mark>assign a non-primitive value to a variable, then this is done by reference, so any changes that are subsequently made will affect all references to that object</mark></p>
+        <p>const c = { value: 1 }; <br>
+            let d = c; // c.value = 1, d.value = 1 <br>
+            d.value = 2; // c.value = 2, d.value = 2</p>
+    </section>
+    <section>
+        <h2>Strings</h2>
+        <p>- collection of characters, such as <b>letters and symbols</b></p>
+        <h2>String Properties and Methods</h2>
+        <p>
+            -Primitive data types and objects have properties and methods. <br>
+            -Properties are information about the object or value. <br>
+            -methods perform an action on the object or value
+        </p>
+        <p><b>access the properties of a string using dot notation. This involves writing a dot followed by the property we are interested in</b></p>
+        <p>every string has a length property that tells us how many characters are in the string:</p>
+        <p>An alternative notation you can use to access a primitive data type's properties are square brackets <br> 
+            name['length']; // note the property name is in quote marks 
+        </p>
+    </section>
+    <section>
+        <h2>
+            Methods (case-sensitive)
+        </h2>
+        <p><b>n action that a primitive data type or object can perform.</b></p>
+        <p><i>to call a method, we use the dot operator (.) followed by the name of the method, followed by parentheses ()</i> <br>
+            name.toUpperCase();
+        </p>
+        <h3>includes() method:</h3>
+        <h3>startsWith() method.</h3>
+        <h3>endsWith()</h3>
+        <h3>concat() method</h3>
+        <p>
+            'JavaScript'.concat('Ninja'); <br>
+            'JavaScriptNinja'<br>
+
+            'Hello'.concat(' ','World','!'); <br>
+            'Hello World!'
+        </p>
+        <p><i>shortcut for string concatenation is to use the + operator to add the two strings together</i><br>
+            'Java' + 'Script' + ' ' + 'Ninja'; <br>
+            'JavaScript Ninja' 
+        </p>
+        <h3>trim() method will remove any whitespace from the beginning and end of a string:</h3>
+        <h3>repeat() method</h3>
+        <p>repeat a string the stated number of times <br>
+            'Hello'.repeat(2); <br>
+            'HelloHello'
+        </p>
+    </section>
+    <section>
+        <h2>Template Literals</h2>
+        <p>-special types of string <br>
+        -use the backtick character, <b>`</b>, to deliminate the string <br>
+        `Hello!`;
+    </p>
+    </section>
+    <section>
+        <h2>Symbols
+        </h2>
+        <h2>Exponential Notation</h2>
+        <p>1e6; // means 1 multiplied by 10 to the power 6 (a million) <br>
+            1000000 <br>
+            <br>
+            2E3; // 2 multiplied by 10^3 (two thousand) <br>
+            2000
+        </p>
+        <br>
+        <p>Decimal values can be created by using a negative index value <br>
+            2.5e-3; // means 2.5 multiplied by 10 to the power -3 (0.001) <br>
+            0.0025
+        </p>
+    </section>
+    <section>
+        <h2>Number Methods</h2>
+        <h3>Use two dots</h3>
+        <p>5..toExponential(); <br>
+            "5e+0"</p>
+        <br>
+        <h3>Put a space before the dot</h3>
+        <p>5 .toExponential(); >> "5e+0"</p>
+        <h3>Always write integers as a decimal</h3>
+        <p><b>5.0</b>.toExponential(); >> "5e+0"</p>
+        <h3>Place the integer in parentheses</h3>
+        <p><b>(5)</b>.toExponential(); >> "5e+0"on> </p>
+        <h3><mark>Assign the number to a constant</mark></h3>
+        <p>const <b>number</b> = 5; <br>
+            5
+            <br>
+            number.toExponential(); <br>
+            "5e+0"
+        </p>
+        <h3> toFixed() method</h3>
+        <p>rounds a number to a fixed number of decimal places</p>
+        <p><b>the value is returned as a string, rather than a number.</b></p>
+        <h3>toPrecision() method</h3>
+        <p>rounds a number to a fixed number of significant figures that is once again returned as a string (and often using exponential notation)</p>
+        <p>325678..toPrecision(2);<br>
+            "3.3e+5" <br>
+            <br>
+            2.459.toPrecision(2); <br>
+            "2.5"
+        </p>
+    </section>
+    <section>
+        <h2>Arithmetic Operations</h2>
+        <p>You can also calculate the remainder of a division using the % operator <br>
+            23%6; // the same as asking 'what is the remainder when 23 is divided by 6' <br>
+            5
+        </p>
+        <h2>Changing The Value of Variables</h2>
+        <p>let points = 0; // initialize points score to zero <br>
+            0
+            <br>
+            points = points + 10; <br>
+            10
+        </p>
+        <h3>compound assignment operator, +=</h3>
+        <p>points += 10; <br>
+         20</p>
+        <p>points -= 5; // decreases points by 5 <br>
+            15
+            <br>
+            points *= 2; // doubles points <br>
+            30
+            <br>
+            points /= 3; // divides value of points by 3 <br>
+            10
+            <br>
+            points %= 7; // changes the value of points to the remainder if its current value is divided by 7 <br>
+            3</p>
+        <h3>Incrementing Values</h3>
+        <p>increment a value by 1, you can use the ++ operator <br>
+            let points = 5; <br>
+            points ++ <br>
+            6
+        </p>
+        <h3>Infinity</h3>
+        <p>a special error value in JavaScript that is used to represent any number that is too big for the language to deal with. </p>
+        <h3>-Infinity</h3>
+        <p>for negative numbers that go below</p>
+        <h3>NaN</h3>
+        <p>error value that is short for "Not a Number". <br>
+            when an operation is attempted and the result isn't numerical <br>
+            multiply a string by a number
+        </p>
+        <h3>Type Coercion
+        </h3>
+        <p>Type coercion happens when the operands of an operator are of different types. </p>
+    </section>
+    <section>
+        <h3>Converting Strings to Numbers</h3>
+        <h2> Number method.</h2>
+        <p>Number('23'); <br>
+            23</p>
+        <h3>trick</h3>
+        <p>const answer = '5' * 1; <br>
+            5
+            <br>
+            typeof answer; <br>
+            "number"</p>
+        <h3>Converting Numbers to Strings</h3>
+        <p>String function <br>
+            String(3); <br>
+            '3'
+        </p>
+        <h3>toString() method:</h3>
+        <p>10..toString(); <br>
+        '10'
+        </p>
+        <h3>paring numbers</h3>
+        <p>convert a string representation of a numerical value back into a number</p>
+        <p>parseFloat() that converts strings into floating point decimal numbers:</p>
+        <h3>Null means 'no value'.</h3>
+    </section>
 </body>
 </html>
