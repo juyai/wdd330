@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 3</title>
+</head>
+<body>
+    <h1>Week 3</h1>
+    <a href="./calculator.html" target="_blank">Excercise 1</a>
+    <a href="./quizninja1.html" target="_blank">Excercise 2</a>
+   
+
+    
+    <h2>Notes</h2>
+    <h2>Object methods</h2>
+    <p><mark>A function that is a property of an object is called its method.</mark></p>
+
+    <p><i> A <b>function Expression</b> to create a function and <b>assign it</b> to the <b><mark>property user.sayHi</mark></b> of the object.</i></p>
+    <p>
+        let user = { <br>
+            name: "John", <br>
+            age: 30 <br>
+          }; <br>
+          <br>
+          <b>user.sayHi</b> = function() { <br>
+            alert("Hello!"); <br>
+          }; <br>
+          
+          user.sayHi(); // Hello!
+    </p>
+    <p><i>a <mark>pre-declared function</mark> as a method,</i></p>
+    <p>
+        let user = { <br>
+            // ... <br>
+          };<br>
+          <br>
+          // first, declare<br>
+          function sayHi() {<br>
+            alert("Hello!");<br>
+          }<br>
+          <br>
+          // then add as a <b>method</b> <br>
+          <b>user.sayHi</b> = sayHi;<br>
+          <br>
+          user.sayHi(); // Hello!
+    </p>
+    <section>
+        <h2>“this” in methods</h2>
+        <p>an object method needs to <b>access the information stored in the object</b> to do its job.</p>
+        <p><mark>To access the object, a method can use the <b>this keyword</b>.</mark></p>
+        <p>example: <br>
+        let user = {<br>
+        name: "John",<br>
+        age: 30,<br>
+        <br>
+        sayHi() {<br>
+        // "this" is the "current object"<br>
+                  alert(this.name);<br>
+                }<br>
+                <br>
+              };<br>
+              <br>
+              user.sayHi(); // John
+        </p>
+
+        <ul>
+            <li>we can omit "function" and just write sayHi().</li>
+            <li>The <b>value of this</b> is <b>the object “before dot”</b>, the one used <b>to call the method</b>.</li>
+            <li>Here during the execution of user.sayHi(), the value of this will be <b>user</b>.</li>
+        </ul>
+        <br>
+        <h2>“this” is not bound</h2>
+        <p>In JavaScript, <b>keyword this can be used in any function, even if it's not a method of an object.</b></p>
+        <p>In JavaScript this is “free”, its value is evaluated at call-time and does not depend on where the method was declared, but rather on </p><b>what object is “before the dot”.</b>
+    </section>
+</body>
+</html>

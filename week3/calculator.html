@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <script>
+        /*let calculator = {
+
+            a: 0,
+            b: 0,
+
+            read() {
+                a = parseInt(prompt("Please enter a number:")) 
+                b = parseInt(prompt("Please enter another number:"))
+            },
+
+            sum() {
+                return `${a} + ${b} = ${a + b}`;
+            },
+
+            mul() {
+                return `${a} x ${b} = ${a * b}`;
+            }
+
+        };*/
+
+        let calculator = {
+            sum() {
+                return `${this.a} + ${this.b} = ${this.a + this.b}`;
+            },
+
+            mul() {
+                return `${this.a} x ${this.b} = ${this.a * this.b}`;
+                
+            },
+
+            read() {
+                this.a = parseInt(prompt("Please enter a number:"));
+                this.b = parseInt(prompt("Please enter another number:"));
+            }
+        };
+
+        calculator.read();
+        alert(calculator.sum());
+        alert(calculator.mul());
+
+
+    </script>
+</head>
+<body>
+    <h1>calculator</h1>
+</body>
+</html>
