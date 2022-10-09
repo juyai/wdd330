@@ -1,0 +1,16 @@
+#board{
+    max-width: 550px;
+    margin: 0 auto;
+    height: 550px;
+    display: grid;
+    background-color: aqua;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding: 1rem;
+    
+}
+
+.box {
+    background-color: white;
+    border: 2px solid blue;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEEK 4</title>
+</head>
+<body>
+    <h1>Week 4</h1>
+    <h2>Practical exercises:</h2>
+    <ul>
+        <li><a href="./search.html">Exercise 1</a></li>
+        <li><a href="./teamactivity.html">Exercise 2: Team Activity</a></li>
+    </ul>
+
+    <h2>NOTES:</h2>
+    <p>
+        <i>process the information in a form on the 'front end' before it is sent to the server using JavaScript</i>
+    </p>
+    <ul>
+        <li>Each form control has an initial value that can be specified in the HTML code. </li>
+        <li>This value can be changed by a user entering information or interacting with the form's interface (such as using a slider to increase or decrease a value).</li> 
+        <li> The value can also be changed dynamically using JavaScript.</li>
+    </ul>
+    <p><b>use JavaScript to interact with the forms.</b></p>
+    <a href="https://www.sitepoint.com/premium/books/designing-ux-forms" target="_blank">forms that are accessible and enhance the user experience</a>
+    <h2>Accessing Form Elements</h2>
+    <p>to access to an specific form:</p>
+    <p>const form = document.forms['search'];</p>
+    <p>accessing to all the elements contained in the form:</p>
+    <p><b>.elements  --- method</b></p>
+    <p>const [input,button] = form.elements;</p>
+    <p>access the form controls using their 'name' attributes as if it was a property of the form object. <br>
+        for example, the input field has a name attribute of searchInput and can be accessed using this code:</p>
+    <p>const input = form<b>.searchInput</b></p>
+    <section>
+        <h2>Form Properties and Methods</h2>
+        <p>used to interact with the form.</p>
+        <p><i>A form can be <b>submitted manually</b> by the user employing a <b>button</b> or <b>input element</b> <br>
+            with a type <b>attribute of submit</b>, or even an <b>input element with a type attribute of image</b></i>
+        </p>
+        <h3><mark>form.action</mark> property</h3>
+        <p>to <b>set the action attribute of a form</b>, so it's sent to a different URL to be processed on the server:</p>
+        <p>form.action = '/an/other.url'</p>
+    </section>
+    <section>
+        <h2>Form Events</h2>
+        <p><b>preventDefault()</b> <br>stop the form from being submitted to a dummy URL</p>
+    </section>
+    <section>
+        <h2>Retrieving and Changing Values From a Form</h2>
+        <p><i>Text input element objects have a <b>value property</b> that can be used to retrieve the text inside the field.</i></p>
+        <p>It's also possible to set the value using JavaScript. Example: <br>
+        input.value ='Search Here' <br>
+        The problem with this is that the text remains in the field when the user clicks inside it, <br> so it has to be deleted before 
+        the user can enter their own text. This is easily remedied using the focus and blur event handlers. <br>
+        
+        input.addEventListener('focus', function(){ <br>
+            if(input.value === 'search Here') { <br>
+                input.value = '';<br>
+            }<br>
+        },false);<br>
+        
+        input.addEventListener('blur', function(){<br>
+            if(input.value === '') {<br>
+                input.value = 'search here';<br>
+            }<br>
+        }, false);<br>
+        <br>
+        Similar functionality can be produced in modern browsers using the <b>placeholder attribute</b> in the HTML markup. <br>
+        <b>slightly different behavior:</b> <br>
+        the placeholder text is not actually a value of the input field, so it won't be submitted as the field's value if the user fails to fill it in.
+    </p>
+    </section>
+</body>
+</html>
