@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5</title>
+</head>
+<body>
+    <h1>Week 5</h1>
+    <a href="./team-activity/index.html">Group Activity</a>
+    <h2>Week 5 Notes</h2>
+    <h2>Testing and Debugging- Chapter 10</h2>
+    <h3>Errors:</h3>
+    <p><b>minimize</b> errors occurring <br>
+        -<mark>find ways to</mark> <b>identify</b> them</i>
+    </p>
+    
+    <p>limit user errors --> <mark>predicting any possible interactions that may throw an error</mark> <br>
+        ---ensure they are dealt with in a way that doesn't negatively affect the user experience--- <br>
+    --program should be <b>designed in a way that prevents</b> the user from making the error.
+    </p>
+    <h3>Exceptions</h3>
+    <p>error that produces a return value<br>
+    the returned value can be used by the program to deal with the error.</p>
+    <h3>Stack Traces</h3>
+    <p>This is a sequence of functions or method calls</p>
+    <p>help you find where an error originates from:</p>
+    <h3>Warnings</h3>
+    <p>-- error in the code that isn't enough to cause the program to crash.</p>
+    <p>--program will continue to run after a warning</p>
+    <p>--Even when this sounds good it can be problematic</p>
+    <p>--the program will continue running incorrectly</p>
+    <h3>The Importance of Testing and Debugging</h3>
+    <h3>Strict Mode</h3>
+    <p>Writing code in strict mode can also help improve its clarity and speed, since it follows <br>
+    conventions and will throw exceptions if any sloppy code practices are used.</p>
+    <p>Strict mode simply requires the following string to be added to the <mark>first line of a JavaScript file</mark>:</p>
+    <p>'use strict';<mark></mark></p>
+    <p><b><i>You can even use strict mode on a per-function basis by adding the line inside a function. <br>
+    Strict mode will then only be applied to anything inside that function:
+    </i></b></p>
+    <p>function strictly(){ <br>
+        'use strict'; <br>
+        // function code goes here
+    </p>
+
+    <h3>Linting Tools</h3>
+    <p>to test the quality of JavaScript code, beyond simply using strict mode</p>
+    <p>useful when you are working in a team, as it ensures everybody follows the same conventions.</p>
+    <p>Passing a lint test is no guarantee that your code is correct</p>
+
+    <h3>Feature Detection</h3>
+    <p>algunos navegadores admitirán ciertas funciones y otros no.</p>
+    <p>Tampoco siempre puede confiar en que los usuarios tengan el navegador más actualizado.</p>
+    <p>determinar la compatibilidad del navegador con una característica</p>
+    <p>--if para verificar si existe un objeto o método antes de intentar llamar al método.</p>
+    <p>--Feature detection guarantees that the method is only called if it actually exists <br>
+        and fails gracefully, without any exceptions being thrown, if the method doesn't exist.</p>
+    <a href="https://modernizr.com/doc" target="_blank">Modernizr</a>
+    <a href="https://caniuse.com/" target="_blank">caniuse</a>
+
+    <h2>The Trusty Alert</h2>
+    <p>--show a dialog at certain <b>points</b> in the code. </p>
+    <p>--alert() <b>stops</b> a program from running until OK is clicked <br>
+        --it allows us to effectively put breakpoints in the code that let us check the value <br>
+        of variables at that point to see if they're what we expect them to be.</p>
+
+    <h3>Using the console</h3>
+    <p>console.log() method can be used to log the value of variables at different stages of <br>
+        the program, although it will not actually stop the execution of the program in the same way as alert() does.</p>
+    <p>The console.trace() method will log an interactive stack trace in the console. <br>
+        This will show the functions that were called in the lead up to an exception occurring while the code is running.</p>
+
+    <h2>Debugging Tools</h2>
+    <p>One of the most useful commands is the debugger keyword. <br>
+        --This will create a breakpoint in your code that will pause the execution of the code
+        <br>--allow you to see where the program is currently up to. <br> 
+        --hover over any variables to see what value they hold at that point. <br>
+        --The program can then be restarted by clicking on the 'play' button.</p>
+        <p>function amIOldEnough(age){ <br>
+            debugger;<br>
+                if (age < 12) {<br>
+                debugger;<br>
+                return 'No, sorry.';<br>
+                } else if (age < 18) {<br>
+                debugger;<br>
+                return 'Only if you are accompanied by an adult.';<br>
+                } else {<br>
+                debugger;<br>
+                return 'Yep, come on in!';<br>
+            }<br>
+        }<br>
+        <br>
+        amIOldEnough(16);</p>
+
+    <h3>Error Objects</h3>
+    <p>When an exeception occurs an error object can be created by the host eviroment <br>
+        it can also be created in the code using a constructor function.</p>
+    <p>const error = new Error();</p>
+    <p>This constructor function takes a parameter that's used as the error message:</p>
+    <p>const error = new Error('Oops, something went wrong');</p>
+    <h4>Seven more error objects used for specific errors:</h4>
+    <ul>
+        <li>RangeError--when a number is outside an allowable range of values.</li>
+        <li>ReferenceError--when a reference is made to an item that doesn't exist. For example, calling a function that hasn't been defined.</li>
+        <li>SyntaxError--when there's an error in the code's syntax.</li>
+        <li>TypeError--when there's an error in the type of value used; for example, a string is used when a number is expected.</li>
+        <li>URIError--a problem encoding or decoding the URI.</li>
+        <li>InternalError--an error occurs in the JavaScript engine. A common cause of this too much recursion.</li>
+    </ul>
+    <p>error objects can also be used as constructors to create custom error objects: <br>
+        const error = new TypeError('You need to use numbers in this function');
+    </p>
+    <h2>Throwing Exceptions</h2>
+    <p>any problems in your code to be highlighted and dealt with, rather than lurk quietly in the background.</p>
+    <p>throw statement can be applied to any JavaScript expression</p>
+    <p>cause the execution of the program to stop.</p>
+    <p>function squareRoot(number) { <br>
+        'use strict';<br>
+        if (number < 0) { <br>
+            throw new RangeError('You can't find the square root of negative numbers')<br>
+        }<br>
+        return Math.sqrt(number);<br>
+    };</p>
+    <h2>Exception Handling</h2>
+    <h3>try, catch, and finally</h3>
+    <p>If we suspect a piece of code will result in an exception, we can wrap it in a try block.</p>
+    <p>function imaginarySquareRoot(number) { <br>
+        'use strict'; <br>
+        try { <br>
+            return String(squareRoot(number)); <br>
+        } catch(error) { <br>
+            return squareRoot(-number)+'i'; <br>
+        }<br>
+    }<br>
+    </p>
+    <p>The code inside the catch block will only run if an exception is thrown inside the try block</p>
+    <p>A finally block can be added after a catch block</p>
+    <p>always be executed after the try or catch block, regardless of whether an exception occurred or not.</p>
+    <p>if you want some code to run in both cases. </p>
+
+
+</body>
+</html>
