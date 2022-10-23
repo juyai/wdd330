@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    background-color: azure;
+}
+
+h1 {
+    text-align: center;
+    margin: 1rem 0 1rem 0;
+}
+
+.wrapper1 {
+    max-width: 405px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 1.5rem;
+}
+
+#wrapper input {
+    height: 100%;
+    width: 100%;
+    font-size: 1.3rem;
+    padding: .5rem;
+}
+
+#wrapper input::placeholder{
+    color: #bfbfbf;
+  }
