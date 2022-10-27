@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    background-color: azure;
+    max-width: 405px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin: 1rem 0 1rem 0;
+}
+
+.wrapper1 {
+    max-width: 405px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 1.5rem;
+}
+
+#wrapper input {
+    height: 100%;
+    width: 100%;
+    font-size: 1.3rem;
+    padding: .5rem;
+}
+
+#wrapper input::placeholder{
+    color: #bfbfbf;
+}
+
+.options span {
+    cursor: pointer;
+    margin: 0 8px;
+    font-size: 17px;
+}
+
+form#wrapper {
+    display: flex;
+}
+
+.task-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.task {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 1fr;
+}
+
+.task button {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.task label {
+    display: flex;
+}
+
+.task input {
+    width: 2.5rem;
+    margin: 10px;
+}
+
+span.done {
+    text-decoration: line-through;
+}
+
+span.active {
+    color: red;
+    font-weight: bolder;
+}
+
