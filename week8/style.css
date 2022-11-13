@@ -9,6 +9,10 @@ span {
 section h2:hover span{
     color: blue;  
     transform: rotate(10deg) translateX(40px) scale(1.5);
+    transition-property: transform;
+    transition-duration: 0.2s;
+    transition-delay: 50ms;
+    transition-timing-function: ease-out;
 }
 
 #skew {

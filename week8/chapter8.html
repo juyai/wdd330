@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 8</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>Week 8 Notes</h1>
+    <h2>Transforms</h2>
+    <h3>transform property</h3>
+    <p>translate, rotate, scale, and/or skew any element on the page.</p>
+    <p>
+      <i>manipulate an element's appearance using <b>transform functions</b></i>
+    </p>
+    <h2>Translation functions</h2>
+    <p>move elements left, right, up, or down.</p>
+    <p>
+      translation function moves elements
+      <b>without impacting the flow of the document</b>.
+    </p>
+    <p>
+      <b
+        ><mark
+          >The translate(x,y) function moves an element x from the left, and y
+          from the top</mark
+        ></b
+      >
+    </p>
+    <p>transform: translate(45px, -45px);</p>
+    <h2>Note: Transforms and Older Browsers</h2>
+    <p>
+      Transforms require vendor prefixing for IE9, Android up to 4.4.3, iOS8,
+      and Blackberry 10. <br />
+      To make the aforementioned code work in IE9 and older mobile WebKit
+      browsers, you would include the following:
+    </p>
+    <p>
+      <mark
+        ><b>-webkit-transform:</b> translate(45px,-45px); /* iOS8, Android
+        4.4.3, BB10 */<br />
+        -ms-transform: translate(45px,-45px); /* IE9 only */ transform:
+        translate(45px,-45px);</mark
+      >
+    </p>
+    <p>
+      If you only want to move an element vertically or horizontally, you can
+      <br />
+      use the translatex or translatey functions respectively.
+    </p>
+    <p>move 45px to the right along the x axis,</p>
+    <p>transform: <b>translateX</b>(45px);</p>
+    <p>move up along the y axis by 30px</p>
+    <p>transform: <b>translateY</b>(-30px);</p>
+    <h3>Exercise/example:</h3>
+    <section>
+      <h2>Put your <span>dukes</span> up, sire</h2>
+      <br />
+      <p><i>Transforms don't work on inline elements.</i></p>
+      <p>easy enough to fix. Just add display: inline-block; to the span:</p>
+    </section>
+
+    <h3>Scaling</h3>
+    <h4>scale(x,y) function</h4>
+    <p>horizontally then vertically</p>
+    <p>
+      If only one value is provided, it will be used for both the x and y values
+    </p>
+    <p>scale(1) would leave the element the same size</p>
+    <p>scale(2) would double its proportions</p>
+    <p>scale(0.5) las reduciría a la mitad, y así sucesivamente.</p>
+    <p>Providing different values will distort the element</p>
+    <p>
+      scaleX(x) or scaleY(y) functions. These functions will scale only the
+      horizontal dimensions or only the vertical dimensions respectively.s
+    </p>
+    <p>
+      <mark
+        >shouldn't declare a new transform: because of the cascade, a second
+        transform would override the first.</mark
+      >
+    </p>
+    <p>
+      o declare multiple transformations, provide a space-separated list of
+      transform functions.
+    </p>
+    <h3>Rotation</h3>
+    <h4>rotate() function</h4>
+    <p>
+      rotates an element around the point of origin by a specified angle value.
+    </p>
+    <p>
+      angles are declared in degrees, with positive degrees moving clockwise and
+      negative moving counterclockwise. In addition to degrees, values can be
+      provided in grads, radians, or turns
+    </p>
+    <p>
+      <mark
+        ><b>remember that transforms are applied in the order provided</b></mark
+      >
+    </p>
+    <h3>Skew</h3>
+    <h4>skew(x,y) function</h4>
+    <h2 id="skew">A Skewed Perspective</h2>
+    <p>
+      there are axis-specific versions of the skew transform: skewX() and
+      skewY().
+    </p>
+    <h3>Changing the Origin of the Transform</h3>
+    <p>control the origin from which your transforms are applied</p>
+    <p>
+      <mark><b>transform-origin property.</b></mark>
+    </p>
+    <p>
+      Rotating an ellipse is more noticeable if the transform-origin is set to
+      something other than the default 50% 50%
+    </p>
+    <p>
+      Browser support for the transform-origin property is the same as for
+      transform —prefixing being required when the transform property requires
+      it:
+    </p>
+    <h2>Note: Choose Your Ordering Carefully</h2>
+    <p>
+      if you rotate before translating, your translate direction will be on the
+      rotated axis.
+    </p>
+    <h2>Support for Internet Explorer 8 and Earlier</h2>
+    <p>
+      While CSS3 transforms are unsupported in IE before version 9, you can
+      mimic these effects with other CSS properties, including filters. To mimic
+      translation use position: relative;, and top and left values
+    </p>
+    <p>
+      You can also scale an element by altering its width and height, or
+      changing the font-size
+    </p>
+    <p>
+      altering a width, height or font-size alters the space allocated for the
+      element and can affect the layout.
+    </p>
+    <h2>Transitions</h2>
+    <p>
+      Las transiciones permiten que los valores de las propiedades de CSS
+      cambien con el tiempo, proporcionando esencialmente animaciones simples.
+    </p>
+    <p>
+      con la propiedad de transición CSS, la transición de color puede ser
+      gradual. Si el navegador no admite transiciones, el cambio será inmediato
+      en lugar de gradual, lo cual está bien y es accesible.
+    </p>
+    <p>
+      Las transiciones CSS se declaran junto con los estilos regulares en un
+      elemento.
+    </p>
+    <p>
+      Often the change will be due to different styles applied to a hover state;
+      however, transitions will work equally well if the property in question is
+      changed by adding a class, or otherwise using JavaScript to change state.
+    </p>
+    <p>steps to create a simple transition using only CSS:</p>
+    <ol>
+      <li>
+        Declare the original state of the element in the default style <br />
+        declaration.
+      </li>
+      <li>
+        Declare the final state of your transitioned element; for<br />
+        example, a :hover state.
+      </li>
+      <li>
+        Include the
+        <mark
+          >transition functions in your default<br />
+          style declaration</mark
+        >
+        using the <b>transition properties</b>, including:<br />
+        <b
+          >transition-property, transition-duration,transition-timing-function,
+          and transition-delay.
+        </b>
+      </li>
+    </ol>
+    <p>
+      The important point to note is that
+      <b>the transition is declared in the default or originating state.</b>
+    </p>
+    <p>
+      The -webkit- vendor prefix is still needed for older mobile devices,
+      including iOS6.1, BlackBerry10, Android 4.3 and UC Browser for Android.
+      All other browsers, including IE10 and Android 4.4 browser support the
+      unprefixed syntax.
+    </p>
+    <h3>transition properties</h3>
+    <p>It is important to include a pre-state and a post-state</p>
+    <p>
+      <mark
+        >For example, to transition from rectangular corners to rounded corners,
+        set the original state to border-radius: 0;.</mark
+      >
+    </p>
+    <p>list of properties that can be animated</p>
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties"
+      >https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties</a
+    >
+    <p>
+      You can provide any number of CSS properties to the transition-property
+      <br />
+      declaration, separated by commas. Alternatively, you can use the keyword
+      <br />
+      all to indicate that every supported property should be animated as it
+      transitions.
+    </p>
+    <h2>Note: Supporting Older Browsers</h2>
+    <p>
+      To support older WebKit browsers, you need to include the -webkit- prefix
+      <br />
+      for all of your transition properties. You may also need to specify the
+      <br />
+      -webkit- prefixed forms of properties. For example, you’re unable to
+      <br />
+      animate transform in a browser that only understands -webkit-transform:
+    </p>
+    <p>
+      .ad-ad2 h1 span { <br />
+      -webkit-transition-property: -webkit-transform; <br />
+      transition-property: transform; <br />
+      }
+    </p>
+    <p>
+      Include the -webkit- prefix for all the transition properties, not just
+      <br />
+      the transition-property property.
+    </p>
+    <p>
+      only use or default to all if you really want to animate every property.
+      <br />
+      If you want to transition more than one property, but not all, <br />
+      comma-separate them
+    </p>
+    <p>
+      .foo { <br />
+      transition-property: transform, color; <br />
+      }
+    </p>
+    <p>
+      <mark
+        >In itself, the transition-property property has no effect; that's
+        because we still need to specify the duration of the transition.</mark
+      >
+    </p>
+    <h3>the transition-duration Property</h3>
+    <p>how long the transition will take</p>
+    <p>from the default state to the transitioned state</p>
+    <p>specify this either in seconds (s) or milliseconds (ms)</p>
+    <p>0.2 seconds (0.2s), or 200 milliseconds (200ms)</p>
+    <p>transition-duration: 0.2s;</p>
+    <p>
+      <b
+        ><mark
+          >200ms is generally considered the optimum time for a transition:
+          <br />
+          anything slower will make the website seem slow</mark
+        ></b
+      >
+    </p>
+    <h2>transition-timing-function</h2>
+    <p>control the pace of the transition</p>
+    <p>
+      animation to start off slow and become faster, start off fast and end
+      <br />
+      slower, advance at an even keel, or some other
+    </p>
+    <h4>key terms</h4>
+    <p>
+      ease, linear, ease-in, ease-out, or ease-in-out. <br />
+      The default ease, comienzo lento, luego se acelera y termina lentamente.
+      <br />
+      <b>ease-in-out:</b>is similar to ease, but accelerates more sharply at the
+      beginning. <br />
+      linear crea una transición que anima a una velocidad constante. <br />
+      <b>ease-in creates</b> a transition that is slow to start but gains speed,
+      then stops abruptly <br />
+      <b>ease-out</b>comienza a toda velocidad, luego se desacelera <br />
+      progresivamente a medida que llega a la conclusión de la transición
+    </p>
+    <p>
+      It's helpful to set a relatively long transition-duration when testing
+      timing functions—if it's too fast, you may not be able to tell the
+      difference.
+    </p>
+    <h3>developer-defined cubic Bézier function</h3>
+    <p>describe your timing function more precisely</p>
+    <p>It accepts four numeric parameters</p>
+    <a href="http://estelle.github.io/animation/files/cubicbezierprint.html"
+      >http://estelle.github.io/animation/files/cubicbezierprint.html</a
+    >
+    <p>
+      set the timing function and time to watch it, visualizing how Bézier
+      curves work.
+    </p>
+    <p>
+      <mark
+        >In addition to the predefined timing functions and developer-defined
+        <br />
+        cubic Bézier function, you can divide the transition over equidistant
+        <br />
+        steps. With the steps function
+      </mark>
+    </p>
+    <p>define the number of steps and the direction of either start or end,</p>
+    <p>
+      For example, steps(5, start) would jump through the equidistant steps of
+      0%, 20%, 40%, 60%, and 80%, and steps(5, end) would jump throught the
+      equidistant steps of 20%, 40%, 60%, 80%, and 100%.
+    </p>
+    <h3>transition-delay property</h3>
+    <p>introduce a delay before the transition begins.</p>
+    <p>
+      the default is 0. Include the number of milliseconds (ms) or seconds (s)
+      to delay the transition.
+    </p>
+    <p>
+      -webkit-transition-delay: 50ms; <br />
+      transition-delay: 50ms;
+    </p>
+    <p>
+      .ad-ad2 h1 span { <br />
+      transition-property: transform; <br />
+      transition-duration: 0.2s; <br />
+      transition-timing-function: ease-out; <br />
+      transition-delay: 50ms; }
+    </p>
+    <p>
+      <b>combine all those values into a shorthand declaration:</b> <br />
+      .ad-ad2 h1 span { <br />
+      transition: transform 0.2s ease-out 50ms; }
+    </p>
+    <p>
+      the properties in the shorthand syntax can be in any order, however, if a
+      <br />
+      delay is included, you must also include a duration, and the duration must
+      <br />
+      precede the delay.
+    </p>
+    <p>
+      Let's say instead of just transitioning the rotation, we transition the
+      <br />
+      text's color property as well.
+    </p>
+    <p>
+      first include a color property in the transitioned style declaration, and
+      <br />
+      then either add the color property in the transition-property value list,
+      br or use the key term all <br />
+    </p>
+    <p>
+      <mark><b>transition-property: transform, color</b></mark
+      >; <br />
+      transition-duration: 0.2s; <br />
+      transition-timing-function: ease-out; <br />
+      transition-delay: 50ms;
+    </p>
+    <p>
+      transition-property: transform, color; <br />
+      transition-duration: 0.2s, 0.1s; <br />
+      transition-timing-function: ease-out, linear; <br />
+      transition-delay: 50ms;
+    </p>
+    <p>
+      These properties will apply an ease-out transition over 0.2 seconds to the
+      <br />
+      transform, but a linear transition over 0.1 seconds to the color. Both
+      <br />
+      have a delay of 50ms before transition initiation.
+    </p>
+    <p>
+      <i
+        >use the shorthand to specify multiple transitions at different <br />
+        durations, delays, and timing functions.</i
+      >
+    </p>
+    <p>transition: transform 0.2s ease-out 50ms, color 0.1s linear 50ms;</p>
+    <p>
+      using the all keyword, all the properties transition at the same rate,
+      <br />
+      speed, and delay:
+    </p>
+    <p>transition: all 0.2s ease-out 50ms;</p>
+    <h2>ANIMATIONS</h2>
+    <p>
+      @-webkit-keyframes myAnimation { <br />
+      /* put animation keyframes here */<br />
+      }<br />
+      @keyframes myAnimation { <br />
+      /* put animation keyframes here */ }
+    </p>
+    <p>
+      There are two keyterms― from and to ―which evaluate to 0% and 100%
+      respectively. These values specify how far along the animation each
+      keyframe is located.
+    </p>
+    <p>
+      Inside each keyframe include the properties you want to animate, along
+      with the animated values.
+    </p>
+    <p>
+      Keyframes can be specified in any order; it's the percentage values rather
+      than the order of the declarations that determine the sequence of
+      keyframes in the animation.
+    </p>
+    <p>
+      @keyframes moveRight { <br />
+      from {<br />
+      transform: translateX(-50%);<br />
+      }<br />
+      to {<br />
+      transform: translateX(50%);<br />
+      }<br />
+      }<br />
+      <br />
+      @keyframes appearDisappear { <br />
+      0%, 100% {<br />
+      opacity: 0;<br />
+      }<br />
+      20%, 80% {<br />
+      opacity: 1;<br />
+      }<br />
+      }<br />
+      <br />
+      @keyframes bgMove {<br />
+      100% {<br />
+      background-position: 120% 0;<br />
+      } }
+    </p>
+    <p>
+      Vale la pena prestar especial atención a la segunda animación: hemos
+      aplicado los mismos estilos al 0 % y al 100 %, y al 20 % y al 80 %. En
+      este caso, significa que el elemento comenzará siendo invisible (opacidad:
+      0;), se hará visible en un 20 % de la duración, permanecerá visible hasta
+      el 80 % y luego se desvanecerá.
+    </p>
+    <p>
+      <b
+        ><mark
+          >An element must have at minimum an animation name for there to be an
+          animation, and must also have a duration declared for the animation to
+          be perceptible.</mark
+        ></b
+      >
+    </p>
+    <p>1.- defined our keyframe animations</p>
+    <p>
+      2.-apply it to one or more elements using the various animation
+      properties.
+    </p>
+    <h3>Animation Properties</h3>
+    <p>
+      This property is used to attach an animation (previously defined using the
+      @keyframes syntax) to an element
+    </p>
+    <p>animation-name: appearDisappear;</p>
+    <p>
+      animation-duration property defines the length of time (in seconds or
+      milliseconds) an animation takes to complete one iteration (all the way
+      through, from 0% to 100%)
+    </p>
+    <p>animation-duration: 300ms;</p>
+    <p>
+      While animation-name is the only required animation property to create an
+      animation, the animation-durationshould be considered required to animate
+      an element. Without declaring the duration it defaults to 0s
+    </p>
+    <p>
+      <mark
+        >animation-timing-function determines how the animation will progress
+        over its duration.
+      </mark>
+    </p>
+    <h4>animation-iteration-count property</h4>
+    <p>define how many times the animation will play through.</p>
+    <p>
+      the value infinite for endlessly repeating animations. If omitted, it will
+      default to 1, in which case the animation will occur only once.
+    </p>
+    <p>animation-iteration-count: infinite;</p>
+    <h3>animation-direction</h3>
+    <p>
+      normally goes from the 0% to the 100% keyframe, jumping back to the 0%
+      when it starts a new iteration
+    </p>
+    <p>
+      value of reverse will cause the animation to start at the 100% keyframe
+      and work its way to the 0% keyframe for every iteration.
+    </p>
+    <p>
+      alternate value, the initial iteration and odd-numbered iterations after
+      that will go in the normal 0% to 100% direction, but the second iteration
+      and every even iteration after that will go in the reverse direction of
+      100% to 0%.
+    </p>
+    <p>
+      the alternate-reverseanimation-direction value causes the animation to
+      alternate direction at every iteration, but it starts in reverse.
+    </p>
+    <p>
+      <b
+        ><i
+          >The animation-delay property is used to define how many milliseconds
+          or seconds to wait before the browser begins the animation:</i
+        ></b
+      >
+    </p>
+    <p>
+      La propiedad animation-fill-mode define lo que sucede antes de que
+      comience la primera iteración de animación y después de que concluya la
+      última iteración de animación.
+    </p>
+    <p>
+      The available values are none, forwards, backwards, or both. The default
+      is none, in which case the animation proceeds and ends as expected
+    </p>
+    <p>
+      forwards, the animation continues to apply the values of the last
+      keyframes after the animation ends.
+    </p>
+    <p>
+      backwards, the animation’s initial keyframes are applied as soon as the
+      animation style is applied to an element.
+    </p>
+    <p>both applies both the backwards and forwards effects:</p>
+    <p>
+      <mark
+        >.verbose { <br />
+        animation-name: appearDisappear; <br />
+        animation-duration: 300ms; <br />
+        animation-timing-function: ease-in; <br />
+        animation-iteration-count: 1;<br />
+        animation-direction: alternate;<br />
+        animation-delay: 5s;<br />
+        animation-fill-mode: backwards; <br />
+        animation-play-state: running;<br />
+        }<br />
+        <br />
+        /* shorthand */ <br />
+        .concise {<br />
+        animation: 300ms ease-in alternate 5s backwards appearDisappear;<br />
+        }</mark
+      >
+    </p>
+    <p>
+      Note that in the shorthand version, we've left out the
+      animation-iteration-count and animation-play-state since both were set to
+      default.
+    </p>
+    <h2>To declare multiple animations on an element</h2>
+    <p>
+      .target { <br />
+      animation: <br />
+      animationOne 300ms ease-in backwards,<br />
+      animationTwo 600ms ease-out 1s forwards;<br />
+      }
+    </p>
+  </body>
+</html>

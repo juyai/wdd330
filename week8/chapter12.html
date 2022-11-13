@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 8 Notes</title>
+    <script src="./script.js" defer></script>
+    <style>
+      .myCanvas,
+      #demo2 {
+        border: dotted 2px black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Week 8 Notes</h1>
+    <h2>APIs: Canvas, SVG, and Drag and Drop</h2>
+    <h2>Canvas API</h2>
+    <p>draw anything we can imagine, all through JavaScript.</p>
+    <p>
+      improve the performance of our websites by avoiding the need to download
+      images off the network.
+    </p>
+    <p>manipulate pixels in images and even video.</p>
+    <h3>Creating a canvas Element</h3>
+    <p>add a canvas element to the page</p>
+    <p>
+      drawing on the canvas is done using JavaScript-grab the element from the
+      DOM-- giving our canvas an ID
+    </p>
+    <p>
+      canvas element takes both a width and height attribute, which must also be
+      set.
+    </p>
+    <p>
+      <b><i>Note: Why not set width and height using CSS?</i></b>
+    </p>
+    <p>
+      If we don't specify width and height, the canvas element will default to a
+      width of 300 and a height of 150. If we set the width and height for a
+      canvas only in CSS, the canvas element will be 300 by 150
+    </p>
+    &lt; canvas id="myCanvas" class="myCanvas" width="200" height="200"&gt;
+    <br />
+    Sorry! Your browser doesn't support Canvas. <br />
+    &lt;/canvas&gt;
+    <p>give it some kind of borde</p>
+    <canvas id="myCanvas" class="myCanvas" width="200" height="200">
+      Sorry! Your browser doesn't support Canvas.
+    </canvas>
+    <p>stored our canvas element in a variable on JS</p>
+    <p>var canvas = document.getElementById("myCanvas");</p>
+    <p>set up the canvas's context</p>
+    <p>El contexto es el lugar donde se representa su dibujo.</p>
+    <p>
+      <b
+        >obtain our drawing context by calling the
+        <mark>getContext method</mark> and passing it the string "2d", since
+        we'll be drawing in two dimensions:</b
+      >
+    </p>
+    <p>var context = canvas.getContext("2d");</p>
+    <p>
+      The object that's returned by getContext is an instance of
+      CanvasRenderingContext2D.
+    </p>
+    <p>Filling Our Brush with Color</p>
+    <h3>strokeStyle or fillStyle properties</h3>
+    <p>
+      Both strokeStyle and fillStyle are set on a context object, and both take
+      one of three values: a string representing a color, a CanvasGradient
+      object, or a CanvasPattern object
+    </p>
+    <p>use a color string to style the stroke.</p>
+    <p>context.strokeStyle = "red";</p>
+    <p>
+      the stroke as the border of the shape you're going to draw. To draw a
+      rectangle with a red border, we first define the stroke color
+    </p>
+    <p>context.strokeStyle = "red";</p>
+    <p>
+      To draw a rectangle with a red border and blue fill, we must also define
+      the fill color
+    </p>
+    <p>context.fillStyle = "blue";</p>
+    <p>
+      We can use any CSS color value to set the stroke or fill color, as long as
+      we specify it as a string
+    </p>
+    <h3>Drawing a Rectangle to the Canvas</h3>
+    <p>calling the fillRect and strokeRect methods.</p>
+    <p>
+      these methods take the
+      <b><mar>X and Y coordinates where you want to begin drawing</mar></b>
+      the fill or the stroke, and <b>the width and height of the rectangle</b>.
+    </p>
+    <p>from the left of the canvas's top-left corner</p>
+    <p>
+      context.fillRect(10, 10, 100, 100); <br />
+      context.strokeRect(10, 10, 100, 100);
+    </p>
+    <h3>Note: The Canvas Coordinate System</h3>
+    <p>
+      In the canvas coordinate system, the top-left corner is (0,0). If the
+      canvas is 200 pixels by 200 pixels, then the bottom-right corner is
+      (200,200)
+    </p>
+    <canvas id="demo2" width="200" height="200">
+      Sorry! Your browser doesn't support Canvas.
+    </canvas>
+    <h3>create a CanvasPattern</h3>
+    <p>calling the createPattern method.</p>
+    <p>
+      two parameters: the image to create the pattern with, and how that image
+      should be repeated.
+    </p>
+    <p>a new function called drawPattern</p>
+    <p>
+      After doing the basics (grabbing the canvas and the context and setting a
+      stroke)
+    </p>
+    <p>create an Image object and set its src property to our image</p>
+    <p>
+      function drawPattern() { <br />
+      var canvas = document.getElementById("demo2");<br />
+      var context = canvas.getContext("2d");<br />
+      context.strokeStyle = "red";<br />
+      <br />
+      var img = new Image(); <br />
+      img.src = "../images/bg-bike.png";<br />
+      }
+    </p>
+    <p>
+      <b
+        ><mark
+          >use the image's onload property to create our pattern once the image
+          has been fully loaded by the browser</mark
+        ></b
+      >
+    </p>
+    <p>img.onload = function()</p>
+    <p>
+      In our onload event handler, we call createPattern, passing it the Image
+      object and the string repeat so that our image repeats along both the X
+      and Y axes. We store the results of createPattern in the variable pattern,
+      and set the fillStyle to that variable
+    </p>
+    <p>
+      Once we've drawn an image on the canvas, we can use the getImageData
+      method from the Canvas API to manipulate the pixels of that image.
+    </p>
+    <p>getImageData will return an ImageData object</p>
+    <p>three properties: width, height, and data</p>
+    <p>
+      data contains information about the pixels in the ImageData object in the
+      form of an array.
+    </p>
+    <p>Each pixel on the canvas will have four values in the data array</p>
+    <p>correspond to that pixel's R, G, B, and A values</p>
+  </body>
+</html>
