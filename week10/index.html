@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 10 Notes</title>
+  </head>
+  <body>
+    <h1>Week 10</h1>
+    <a href="./exercises/exercise1/index.html" target="_blank">Exercise 1</a>
+    <a href="./exercises/exercise2/index.html" target="_blank">exercise 2</a>
+    <h2>Notes</h2>
+    <p>
+      Validation done in the browser is called client-side validation, while
+      validation done on the server is called server-side validation.
+    </p>
+    <p>We want to get the right data, in the right format.</p>
+    <p>
+      We want to protect our users' data. Forcing our users to enter secure
+      passwords makes it easier to protect their account information.
+    </p>
+    <h3>Built-in form validation or JavaScript validation</h3>
+    <h4>Built-in form validation</h4>
+    <p>using validation attributes on form elements.</p>
+    <ul>
+      <li>
+        required: Specifies whether a form field needs to be filled in before
+        the form can be submitted.
+      </li>
+      <li>
+        minlength and maxlength: Specifies the minimum and maximum length of
+        textual data (strings).
+      </li>
+      <li>
+        min and max: Specifies the minimum and maximum values of numerical input
+        types.
+      </li>
+      <li>
+        type: Specifies whether the data needs to be a number, an email address,
+        or some other specific preset type.
+      </li>
+      <li>
+        pattern: Specifies a regular expression that defines a pattern the
+        entered data needs to follow.
+      </li>
+    </ul>
+    <p>
+      If the data entered in a form field follows all of the rules specified by
+      the above attributes, it is considered valid. If not, it is considered
+      invalid.
+    </p>
+    <p>
+      When an element is valid, the following things are true: <br />
+
+      The element matches the :valid CSS pseudo-class, which lets you apply a
+      specific style to valid elements. If the user tries to send the data, the
+      browser will submit the form, provided there is nothing else stopping it
+      from doing so (e.g., JavaScript). When an element is invalid, the
+      following things are true:
+      <br />
+      The element matches the :invalid CSS pseudo-class, and sometimes other UI
+      pseudo-classes (e.g., :out-of-range) depending on the error, which lets
+      you apply a specific style to invalid elements. If the user tries to send
+      the data, the browser will block the form and display an error message.
+    </p>
+    <h5>The required attribute</h5>
+    <p>To make an input mandatory</p>
+    <p>
+      For good user experience, indicate to the user when form fields are
+      required
+    </p>
+    <h4>Validating against a regular expression</h4>
+    <p>
+      pattern attribute, which expects a Regular Expression as its value. A
+      regular expression (regex) is a pattern that can be used to match
+      character combinations in text strings
+    </p>
+    <ul>
+      <li>a — Matches one character that is a (not b, not aa, and so on).</li>
+      <li>abc — Matches a, followed by b, followed by c.</li>
+      <li>
+        ab?c — Matches a, optionally followed by a single b, followed by c. (ac
+        or abc)
+      </li>
+      <li>
+        ab*c — Matches a, optionally followed by any number of bs, followed by
+        c. (ac, abc, abbbbbc, and so on).
+      </li>
+      <li>a|b — Matches one character that is a or b.</li>
+      <li>
+        abc|xyz — Matches exactly abc or exactly xyz (but not abcxyz or a or y,
+        and so on).
+      </li>
+    </ul>
+    <p>Note: The <textarea> element doesn't support the pattern attribute.</p>
+    <p>A field is invalid if it has a value and that value has fewer characters than the minlength value or more than the maxlength value.</p>
+    <p>For number fields (i.e. <input type="number">), the min and max attributes can be used to provide a range of valid values.</p>
+    <p>Constraint Validation API, which consists of a set of methods and properties available on the following form element DOM interfaces:</p>
+    <ul>
+        <li>HTMLButtonElement (represents a <button> element)</li>
+        <li>HTMLFieldSetElement (represents a <fieldset> element)</li>
+        <li>HTMLInputElement (represents an <input> element)</li>
+        <li>HTMLOutputElement (represents an <output> element)</li>
+        <li>HTMLSelectElement (represents a <select> element)</li>
+        <li>HTMLTextAreaElement (represents a <textarea> element)</li>  
+    </ul>
+    <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation">Review here validation using JS</a>
+    <h2>Supplying request options</h2>
+    <p>The fetch() method can optionally accept a second parameter, an init object that allows you to control a number of different settings</p>
+    <p>// Example POST method implementation: <br>
+        async function postData(url = '', data = {}) { <br>
+          // Default options are marked with *<br>
+          const response = await fetch(url, {<br>
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.<br>
+            mode: 'cors', // no-cors, *cors, same-origin<br>
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached<br>
+            credentials: 'same-origin', // include, *same-origin, omit<br>
+            headers: {<br>
+              'Content-Type': 'application/json'<br>
+              // 'Content-Type': 'application/x-www-form-urlencoded',<br>
+            },<br>
+            redirect: 'follow', // manual, *follow, error<br>
+            referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url <br>
+            body: JSON.stringify(data) // body data type must match "Content-Type" header<br>
+          });<br>
+          return response.json(); // parses JSON response into native JavaScript objects<br>
+        }<br>
+        <br>
+        postData('https://example.com/answer', { answer: 42 })<br>
+          .then((data) => {<br>
+            console.log(data); // JSON data parsed by `data.json()` call<br>
+          });</p>
+</body>
+</html>
