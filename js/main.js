@@ -54,6 +54,11 @@ const links = [
   {
     label: "Week 11 notes",
     url: "week11/client/week11.html"
+  },
+
+  {
+    label: "Block 2 Challenge App",
+    url: "block2challengeapp/index.html"
   }
   ]
 

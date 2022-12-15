@@ -11,6 +11,8 @@ export default class HikesController {
     this.hikeModel = new HikeModel();
     this.hikesView = new HikesView(parentId);
   }
+
+  //FUNCION PARA CREAR TIPO VARIABLES Y EMPEZAR EL PROGRAMA
   showHikeList() {
     // the list of hikes will come from the model now...
     const hikeList = this.hikeModel.getAllHikes();
@@ -19,6 +21,8 @@ export default class HikesController {
     // after the hikes have been rendered...add our listener
     this.addHikeListener();
   }
+
+  
   showOneHike(hikeName) {
     const hike = this.hikeModel.getHikeByName(hikeName);
     this.hikesView.renderOneHikeFull(
